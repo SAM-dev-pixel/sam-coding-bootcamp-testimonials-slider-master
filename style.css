@@ -1,0 +1,184 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+:root {
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+}
+img {
+  display: block;
+}
+html {
+  font-size: 32px;
+}
+body {
+  /* width: 100vw; */
+  min-height: 100vh;
+  /* overflow: hidden; */
+  font-family: "Inter", sans-serif;
+  display: grid;
+  place-content: center;
+  background-image: url(images/pattern-curve.svg);
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.testimonial-sect {
+  /* width: 40.375rem; */
+  width: clamp(1rem, 100vw, 40.375rem);
+  /* height: 20.5em; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 3px solid yellow; */
+  position: relative;
+  overflow: hidden;
+}
+.pattern-quote {
+  /* width: 3.75rem; */
+  width: clamp(0.75rem, 9vw, 3.75rem);
+  transform: translate(160%, -110%);
+}
+.pattern-bg {
+  /* width: 21.7rem; */
+  width: clamp(1rem, 50vw, 21.7rem);
+}
+.testimonial-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  /* left: -100%; */
+  transform: translateY(-50%);
+  /* border: 3px solid green; */
+  transition: left 0.75s, opacity 0.25s;
+}
+.testimonial-wrapper.john {
+  left: 100%;
+  opacity: 0;
+}
+.testimonial-txt-wrapper {
+  /* width: 19.5rem; */
+  width: clamp(1rem, 43vw, 19.5rem);
+  transform: translate(2.875rem, 15%);
+  z-index: 99;
+}
+.text {
+  color: var(--dark-blue);
+  /* font-size: 1rem; */
+  font-size: clamp(0.01rem, 3vw, 1rem);
+  font-weight: 300;
+  /* margin-bottom: 1.6rem; */
+  margin-bottom: 8%;
+}
+.name {
+  color: var(--dark-blue);
+  /* font-size: 0.625rem; */
+  font-size: clamp(0.01rem, 1.75vw, 0.625rem);
+  font-weight: 500;
+}
+.name span {
+  color: var(--grayish-blue);
+}
+.testimonial-img {
+  /* width: 16.81rem; */
+  width: clamp(1rem, 38vw, 16.81rem);
+  transform: translateX(-2.875rem);
+}
+.testimonial-btn-wrapper {
+  /* width: 3.475rem; */
+  width: clamp(1rem, 10vw, 3.475rem);
+  height: clamp(0.5rem, 5.275vw, 1.75rem);
+  /* height: 1.75rem; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 36%;
+  bottom: 5%;
+  background-color: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 0.55rem hsla(240, 38%, 20%, 0.25);
+}
+.prev-btn,
+.next-btn {
+  width: 50%;
+  height: 100%;
+  /* padding: 0.6em 0.68em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  cursor: pointer;
+}
+:is(.prev-btn, .next-btn) img {
+  /* width: 22%; */
+  /* width: 0.375rem; */
+  width: clamp(0.01rem, 0.9vw, 0.375rem);
+}
+:is(.prev-btn, .next-btn):hover {
+  background-color: var(--dark-blue);
+}
+
+@media (width <= 48rem) {
+  .testimonial-sect {
+    height: 100vh;
+    justify-content: start;
+    flex-direction: column-reverse;
+    padding: 0 5vw;
+  }
+  .pattern-quote {
+    width: 2rem;
+    /* width: clamp(0.75rem, 9vw, 3.75rem); */
+    transform: translate(8%, 50%);
+  }
+
+  .pattern-bg {
+    /* width: 21.7rem; */
+    /* width: clamp(1rem, 50vw, 21.7rem); */
+    width: 100%;
+  }
+  .testimonial-wrapper {
+    /* height: 100%; */
+    padding: 5vh 5vw 0;
+    /* margin-top: 5vh; */
+    justify-content: start;
+    flex-direction: column-reverse;
+    overflow: scroll;
+  }
+  .testimonial-txt-wrapper {
+    /* width: clamp(1rem, 43vw, 19.5rem); */
+    width: 100%;
+    margin-top: 3rem;
+    transform: none;
+    text-align: center;
+  }
+  .text {
+    font-size: 0.75rem;
+  }
+  .name {
+    font-size: 0.75rem;
+  }
+  .testimonial-img {
+    /* width: clamp(1rem, 38vw, 16.81rem); */
+    width: 70%;
+    transform: none;
+  }
+  .testimonial-btn-wrapper {
+    width: 3.475rem;
+    height: 1.75rem;
+    /* width: clamp(1rem, 10vw, 3.475rem);
+    height: clamp(0.5rem, 5.275vw, 1.75rem); */
+    right: 50%;
+    bottom: 55%;
+    transform: translate(50%, 55%);
+  }
+}
